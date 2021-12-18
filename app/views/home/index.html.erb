@@ -1,0 +1,11 @@
+
+<%if user_signed_in? %>
+  <h1>Hey, Hola <%= current_user.email%></h1>
+
+  <% else %>
+
+  <h1>Hey, Hola Mundo! Autentiquese</h1>
+  <%end %>
+
+
+<%= link_to "Inicio", articles_path%>
