@@ -1,0 +1,9 @@
+
+<div class="card padding margin-top">
+
+  <h4 class="text-uppercase"><%= article.title %></h4>
+  <p class="text-secondary"><%=article.created_at %></p>
+  <%= link_to "Ver mas", article %>
+  <%#= link_to "Editar", controller:"articles",action:"edit", id: article%>
+  <%= link_to "Editar", edit_article_path(id: article)%>
+</div>
