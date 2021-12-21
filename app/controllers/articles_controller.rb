@@ -14,25 +14,26 @@ class ArticlesController < BaseController
 
   def new
     @article = Article.new
+    @categories = Category.all
     #@article.title = "Mostrando algo"
     #@article.rayContent = "pa que salga algo"
   end
 
   def create
 
-    @article = Article.create(title: params[:article][:title],
+    @article = Article.create(title: params[:article][:title], category_elements: params[:article][:category_elements],
                               rayContent: params[:article][:rayContent], user: current_user)
     # render json: @article
     @article.save_categories
     redirect_to articles_path
   end
   def edit
-
+    @categories = Category.all
   end
 
   def update
     #@article = Article.find(params[:id])
-    @article.update(title: params[:article][:title], rayContent: params[:article][:rayContent],user: current_user)
+    @article.update(title: params[:article][:title], category_elements: params[:article][:category_elements],rayContent: params[:article][:rayContent],user: current_user)
 
     @article.save_categories
     redirect_to @article

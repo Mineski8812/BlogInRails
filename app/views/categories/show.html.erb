@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
+<div class="large-container center-block">
 
-<p>
-  <strong>Color:</strong>
-  <%= @category.color %>
-</p>
+  <h1> Titulo de la categoria: <%= @category.title %></h1>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <%= render @category.articles %>
+</div>
+
+
+<!--<p id="notice"><%#= notice %></p>-->
+
+<!--<p>-->
+<!--  <strong>Title:</strong>-->
+  <%#= @category.title %>
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Color:</strong>-->
+  <%#= @category.color %>
+<!--</p>-->
+
+<!--<%#= link_to 'Edit', edit_category_path(@category) %> |-->
+<%#= link_to 'Back', categories_path %>
